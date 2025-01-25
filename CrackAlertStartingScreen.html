@@ -1,0 +1,143 @@
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<!-- Crack Alert -->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrackAlert</title>
+    <link rel="icon" href="C:\Users\samoi\OneDrive\Desktop\JavaScript/Logo.jpg" type="image/jpeg">
+   
+</head>5
+<body style="margin: 0; padding: 0; position: relative; background: white;">
+
+ <!-- <div style="width: 100%; height: 100%; position: relative; background: white"> -->
+    <!-- Top Bar -->
+    <div style="width: 393px; height: 73px; left: 0px; top: 0px; position: absolute; background: #5388EA"></div>
+    
+    <!-- Title -->
+    <div style="left: 95px; top: 16px; position: absolute; color: #FFD900; font-size: 40px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+        CrackAlert
+    </div>
+    
+   <!-- Google Maps Embed -->
+    <iframe
+        style="width: 393px; height: 707px; left: 0px; top: 73px; position: absolute; border: none;"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21182.20927741321!2d13.733871604490556!3d45.53774962249958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477b689587ef915f%3A0xff290ab83152d9dd!2sThe%20Faculty%20of%20Mathematics%2C%20Natural%20Sciences%20and%20Information%20Technologies!5e0!3m2!1sen!2ssi!4v1737801139797!5m2!1sen!2ssi" 
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+
+
+<!-- Hint Box -->
+<div class="hint-box"></div>
+
+<style>
+/* Default style for the hint box */
+.hint-box {
+    width: 120px;
+    height: 110px;
+    left: 16px;
+    top: 654px;
+    position: absolute;
+    opacity: 0.60;
+    background: linear-gradient(0deg, #000000 0%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for the hint box */
+.hint-box:hover {
+    background: linear-gradient(0deg, #444444 0%, #444444 100%); /* Darker background on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35); /* Add a stronger shadow effect */
+    transform: scale(1.05); /* Slightly enlarge the box */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+}
+</style>
+
+    
+    <!-- Hint Text -->
+    <div style="left: 33px; top: 675px; position: absolute">
+        <span style="color: #FFD900; font-size: 14px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+            Hint:<br />Click on the<br />red 
+        </span>
+        <span style="color: #FF0004; font-size: 14px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">!</span>
+        <span style="color: #FFD900; font-size: 14px; font-family: Kavoon; font-weight: 400; word-wrap: break-word"> mark</span>
+    </div>
+    
+    <!-- Bottom Bar -->
+    <div style="width: 393px; height: 72px; left: 0px; top: 780px; position: absolute; background: #5388EA; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)"></div>
+    
+   <!-- Bottom Bar Button -->
+<div style="width: 393px; height: 72px; left: 0px; top: 780px; position: absolute; display: flex; justify-content: center; align-items: center;">
+    <button style="width: 300px; height: 50px; text-align: center; color: #FFD900; font-size: 30px; font-family: Kavoon; font-weight: 400; background-color: transparent; border: 2px solid black;border-radius: 25px; cursor: pointer;"
+      onclick="handleButtonClick()">
+        Report by address
+    </button>
+</div>
+    
+    <!-- Icon -->
+    <div style="width: 60.34px; height: 55.67px; left: 4.33px; top: 10.17px; position: absolute;">
+        <button 
+            style="width: 100%; height: 100%; padding: 0; margin: 0; border: none; background: transparent; cursor: pointer;"
+            onclick="handleButtonClick()">
+            <img src="Back Square.svg" style="width: 100%; height: 100%;" alt="Icon" />
+        </button>
+    </div>
+
+
+
+<script>
+    function handleButtonClick() {
+        alert("Button clicked!");
+    }
+</script>
+
+ <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <style>
+        #map {
+            width: 393px;
+            height: 707px;
+            position: absolute;
+            top: 73px;
+            left: 0;
+        }
+    </style> -->
+
+
+  <!-- Google Map Interractive
+    <div id="map"></div> -->
+
+
+
+<!-- <script>
+    function initMap() {
+        // Create the map centered at the specified coordinates.
+        const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 45.53774962249958, lng: 13.733871604490556 },
+            zoom: 14,
+        });
+
+        // Add a click event listener to the map.
+        map.addListener("click", (event) => {
+            // Create a red exclamation mark icon.
+            const markerIcon = {
+                url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FF0004' viewBox='0 0 24 24' width='48' height='48'%3E%3Cpath d='M12 0C5.371 0 0 5.371 0 12c0 6.628 5.371 12 12 12s12-5.372 12-12C24 5.371 18.629 0 12 0zm0 17c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm1-13H11v9h2V4z'/%3E%3C/svg%3E",
+                scaledSize: new google.maps.Size(30, 30), // Adjust the size of the icon.
+            };
+
+            // Add the marker at the clicked location.
+            new google.maps.Marker({
+                position: event.latLng,
+                map: map,
+                icon: markerIcon,
+            });
+        });
+    }
+
+    // Initialize the map after the page loads.
+    window.onload = initMap;
+</script> -->
+
+</body>
+</html>
