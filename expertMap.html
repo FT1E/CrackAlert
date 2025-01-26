@@ -12,25 +12,40 @@
 
     <body>
         
-        <div id="mapdiv">
+        <div id="mapdiv" style="height: 500px;">
             <!-- <iframe id="map" src="" frameborder="1px black"></iframe> -->
              
             <!-- Google Maps Embed -->
-            <iframe
+            <!-- <iframe
                 id="map"
                 style="width: 393px; height: 707px; left: 0px; top: 73px; position: absolute; border: none;"
                 src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyD78kPdeOEAVJnyjOVwtZ7vSoX5LXZsouU&"
                 allowfullscreen=""
                 loading="lazy">
-            </iframe>
+            </iframe> -->
         </div>
 
         <script>
-            let map = document.getElementById("map");
+            // let map = document.getElementById("map");
 
-            dest = JSON.parse(localStorage.getItem("dest"));
+            // dest = JSON.parse(localStorage.getItem("dest"));
 
-            map.src = map.src + "&origin=45.549022930478316, 13.72762411960847" + "&destination=" + dest[0] + ", " + dest[1] 
+            // map.src = map.src + "&origin=45.549022930478316, 13.72762411960847" + "&destination=" + dest[0] + ", " + dest[1] 
+
+            // map setup
+        var map = L.map("mapdiv").setView([45.548821, 13.727583], 17);
+
+        L.tileLayer("https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=JzzGYautmOGS1jAx20F7",
+            {attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'}
+        ).addTo(map);
+
+        L.marker([45.5490077290966, 13.727629546356725]).addTo(map);
+        dest = JSON.parse(localStorage.getItem("dest"));
+        L.marker(dest).addTo(map);
+        let polyline = L.polyline([ [45.5490077290966, 13.727629546356725], dest] ).addTo(map);
+
+        map.fitBounds(polyline.getBounds());
+
         </script>
     </body>
 
