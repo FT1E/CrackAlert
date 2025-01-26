@@ -59,9 +59,9 @@
                 // if there are no markers set it as an empty [] in local storage
                 markers = [L.latLng(45.54847, 13.73184), L.latLng(45.547694, 13.725969), L.latLng(45.543975, 13.724563)];
                 localStorage.setItem("cracks", JSON.stringify(markers));
-                return;
+            }else{
+                markers = JSON.parse(markers);
             }
-            markers = JSON.parse(markers);
 
             for(i=0; i<markers.length; i++){
                 m = L.marker(markers[i]);
