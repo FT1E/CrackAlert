@@ -41,12 +41,15 @@
                 <div style="left: 181px; top: 200px; position: absolute; color: black; font-size: 15px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
                     Upload
                 </div>
-                <!-- Upload Icon -->
-                <div style="width: 43px; height: 38px; left: 189px; top: 159px; position: absolute">
-                    <!-- <div style="width: 32.25px; height: 28.50px; left: 5.38px; top: 4.75px; position: absolute; border: 4px #1E1E1E solid"></div> -->
-                    <img src="media/upload_icon.png" >
-                </div>
+              <!-- Upload Icon -->
+              <div style="width: 43px; height: 38px; left: 189px; top: 159px; position: absolute" onclick="triggerFileInput()">
+                <!-- <div style="width: 32.25px; height: 28.50px; left: 5.38px; top: 4.75px; position: absolute; border: 4px #1E1E1E solid"></div> -->
+                <img src="media/upload_icon.png" >
             </div>
+        </div>
+
+            <!-- Hidden File Input -->
+            <input id="fileInput" type="file" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
             
            <!-- Location Section -->
             <div style="left: 146px; top: 327px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
@@ -128,6 +131,21 @@
                     window.location.href="index.html"; // Replace with your desired HTML file
                 }, 1500);
             }
+
+
+            function triggerFileInput() {
+    // Trigger the hidden file input
+    document.getElementById("fileInput").click();
+}
+
+function handleFileSelect(event) {
+    const file = event.target.files[0]; // Get the selected file
+    if (file) {
+        // You can handle the selected file here
+        console.log("File selected:", file.name);
+        alert("File uploaded successfully: " + file.name);
+    }
+}
             </script>
 
     </body>
