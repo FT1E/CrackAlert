@@ -52,6 +52,17 @@
         markers = [L.latLng(45.54847, 13.73184), L.latLng(45.547694, 13.725969), L.latLng(45.543975, 13.724563)];
 
         function initMarkers(){
+            
+            // get markers from local storage
+            markers = localStorage.getItem("cracks");            
+            if(markers == null){
+                // if there are no markers set it as an empty [] in local storage
+                markers = [];
+                localStorage.setItem("cracks", JSON.stringify(markers));
+                return;
+            }
+            markers = JSON.parse(markers);
+
             for(i=0; i<markers.length; i++){
                 m = L.marker(markers[i]);
                 m.addTo(map);
@@ -64,6 +75,8 @@
         var popup = L.popup();
 
         function onMapClick(e){
+            // console.log(JSON.stringify(e.latlng));
+            localStorage.setItem("newCrack", JSON.stringify(e.latlng));
             window.location.href = "createAlert.html";
         }
 

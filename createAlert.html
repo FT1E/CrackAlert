@@ -30,7 +30,7 @@
                 <!-- Take Photo Icon -->
                 <div style="width: 96px; height: 94px; left: 79px; top: 83px; position: absolute">
                     <!-- <div style="width: 96px; height: 73.86px; left: 0px; top: 10.07px; position: absolute; background: black"></div> -->
-                    <img src="media/camera_icon.png" style="">
+                    <img src="media/camera_icon.png" >
                 </div>
                 <!-- "Take a photo" Text -->
                 <div style="left: 78px; top: 58px; position: absolute">
@@ -44,7 +44,7 @@
                 <!-- Upload Icon -->
                 <div style="width: 43px; height: 38px; left: 189px; top: 159px; position: absolute">
                     <!-- <div style="width: 32.25px; height: 28.50px; left: 5.38px; top: 4.75px; position: absolute; border: 4px #1E1E1E solid"></div> -->
-                    <img src="media/upload_icon.png" style="">
+                    <img src="media/upload_icon.png" >
                 </div>
             </div>
             
@@ -115,6 +115,12 @@
                 // Show the popup
                 const popup = document.getElementById("popup");
                 popup.style.display = "block";
+
+                // add the newly reported crack
+                cord = JSON.parse(localStorage.getItem("newCrack"));
+                markers = JSON.parse(localStorage.getItem("cracks"));
+                markers.push(cord);
+                localStorage.setItem("cracks", JSON.stringify(markers));
             
                 // Hide the popup and redirect after 4 seconds
                 setTimeout(() => {
