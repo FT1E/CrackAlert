@@ -49,7 +49,7 @@
 
 
 
-        markers = [L.latLng(45.54847, 13.73184), L.latLng(45.547694, 13.725969), L.latLng(45.543975, 13.724563)];
+        let markers;
 
         function initMarkers(){
             
@@ -57,7 +57,7 @@
             markers = localStorage.getItem("cracks");            
             if(markers == null){
                 // if there are no markers set it as an empty [] in local storage
-                markers = [];
+                markers = [L.latLng(45.54847, 13.73184), L.latLng(45.547694, 13.725969), L.latLng(45.543975, 13.724563)];
                 localStorage.setItem("cracks", JSON.stringify(markers));
                 return;
             }
