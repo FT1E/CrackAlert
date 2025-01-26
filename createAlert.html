@@ -1,112 +1,167 @@
 <html>
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrackAlert</title>
     <link rel="icon" href="media/Logo.jpg" type="image/jpeg">
-</head>
-<body>
-    <div style="width: 100%; height: 100%; position: relative; background: white">
-        <!-- Top Bar -->
-        <div style="width: 393px; height: 73px; left: 0px; top: 0px; position: absolute; background: #5388EA"></div>
-        <!-- Title -->
-        <div style="left: 86px; top: 11px; position: absolute; color: #FFD900; font-size: 40px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-            Create Alert
+    </head>
+
+    <body>
+        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <!-- Create Alert -->
+        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+        <div style="width: 100%; height: 100%; position: relative; background: white">
+            <!-- Top Bar -->
+            <div style="width: 393px; height: 73px; left: 0px; top: 0px; position: absolute; background: #5388EA"></div>
+            
+            <!-- Title -->
+            <div style="left: 86px; top: 11px; position: absolute; color: #FFD900; font-size: 40px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+                Create Alert
+            </div>
+            
+            <!-- Photo Upload Section -->
+            <div style="width: 255px; height: 232px; left: 64px; top: 82px; position: absolute">
+                <!-- Section Title -->
+                <div style="left: 14px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+                    Take or upload a photo:
+                </div>
+                
+           <!-- Background Box -->
+<div style="width: 255px; height: 194px; left: 0px; top: 38px; position: absolute; background: #D9D9D9; border-radius: 20px">
+</div>
+
+<!-- Take Photo Icon -->
+<div style="width: 96px; height: 94px; left: 79px; top: 83px; position: absolute">
+    <!-- Camera Button -->
+    <label for="cameraInput" style="cursor: pointer;">
+        <img src="media/camera_icon.png" alt="Camera Icon" style="width: 100%; height: 100%;">
+    </label>
+    <input id="cameraInput" type="file" accept="image/*" capture="environment" style="display: none;" onchange="handleCameraInput(event)">
+</div>
+
+                <!-- "Take a photo" Text -->
+                <div style="left: 78px; top: 58px; position: absolute">
+                    <span style="color: black; font-size: 15px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">Take a photo</span>
+                    <span style="color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">:</span>
+                </div>
+                <!-- "Upload" Text -->
+                <div style="left: 267px; top: 200px; position: absolute; color: black; font-size: 15px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+                    Upload
+                </div>
+              <!-- Upload Icon -->
+              <div style="width: 43px; height: 38px; left: 270px; top: 159px; position: absolute" onclick="triggerFileInput()">
+                <!-- <div style="width: 32.25px; height: 28.50px; left: 5.38px; top: 4.75px; position: absolute; border: 4px #1E1E1E solid"></div> -->
+                <img src="media/upload_icon.png" >
+            </div>
         </div>
-        <!-- Photo Upload Section -->
-        <div style="width: 255px; height: 232px; left: 64px; top: 82px; position: absolute">
-            <!-- Section Title -->
-            <div style="left: 14px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                Take or upload a photo:
-            </div>
-            <!-- Background Box -->
-            <div style="width: 255px; height: 194px; left: 0px; top: 38px; position: absolute; background: #D9D9D9; border-radius: 20px" onclick="document.getElementById('cameraInput').click()"></div>
-            <!-- Camera Button -->
-            <div style="width: 96px; height: 94px; left: 79px; top: 83px; position: absolute; cursor: pointer;">
-                <img src="media/camera_icon.png" alt="Camera Icon" style="width: 100%; height: 100%;">
-            </div>
-            <!-- Camera Input -->
-            <input id="cameraInput" type="file" accept="image/*" capture="environment" style="display: none;" onchange="handleCameraInput(event)">
-            <!-- "Take a photo" Text -->
-            <div style="left: 78px; top: 58px; position: absolute">
-                <span style="color: black; font-size: 15px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">Take a photo</span>
-                <span style="color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">:</span>
-            </div>
-            <!-- Upload Icon -->
-            <div style="width: 43px; height: 38px; left: 270px; top: 159px; position: absolute; cursor: pointer;" 
-                 onclick="document.getElementById('galleryInput').click()">
-                <img src="media/upload_icon.png">
-            </div>
-            <!-- Upload Input -->
-            <input id="galleryInput" type="file" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
-            <!-- "Upload" Text -->
-            <div style="left: 267px; top: 200px; position: absolute; color: black; font-size: 15px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                Upload
-            </div>
-        </div>
-        <!-- Location Section -->
-        <div style="left: 146px; top: 327px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+
+            <!-- Hidden File Input -->
+            <input id="fileInput" type="file" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+            
+           <!-- Location Section -->
+            <div style="left: 146px; top: 327px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
             Location:
-        </div>
-        <textarea style="width: 333px; height: 61px; left: 30px; top: 352px; position: absolute; background: #D9D9D9; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 5px; resize: none;"></textarea>
-        <!-- Type Section -->
-        <div style="width: 333px; height: 86px; left: 30px; top: 439px; position: absolute">
-            <div style="width: 333px; height: 61px; left: 0px; top: 25px; position: absolute; background: #D9D9D9"></div>
-            <div style="left: 135px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+            </div>
+            <textarea style="width: 333px; height: 61px; left: 30px; top: 352px; position: absolute; background: #D9D9D9; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 5px; resize: none;"></textarea>
+            
+           
+            <!-- Type Section -->
+            <div style="width: 333px; height: 86px; left: 30px; top: 439px; position: absolute">
+             <!-- Background Box -->
+        <div style="width: 333px; height: 61px; left: 0px; top: 25px; position: absolute; background: #D9D9D9"></div>
+         <!-- "Type:" Text -->
+        <div style="left: 135px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
                 Type:
+        </div>
+    <!-- Dropdown Menu -->
+    <select style="width: 333px; height: 61px; left: 0px; top: 25px; position: absolute; background: #D9D9D9; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 5px;">
+        <option value="crack">Crack</option>
+        <option value="leak">Leak</option>
+        <option value="busted">Busted</option>
+        <option value="damaged">Damaged</option>
+        <option value="other">Other</option>
+    </select>
+</div>
+            
+            <!-- Description Section -->
+            <div style="width: 333px; height: 187px; left: 30px; top: 543px; position: absolute">
+                <!-- Background Box -->
+                <div style="width: 333px; height: 162px; left: 0px; top: 25px; position: absolute; background: #D9D9D9; border-radius: 20px"></div>
+                <!-- "Description:" Text -->
+                <div style="left: 101px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
+                    Description:
+                </div>
+                <!-- Textarea -->
+                 <textarea style="width: 313px; height: 142px; left: 10px; top: 35px; position: absolute; background: transparent; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 10px; resize: none; outline: none; border-radius: 15px;"></textarea>
             </div>
-            <select style="width: 333px; height: 61px; left: 0px; top: 25px; position: absolute; background: #D9D9D9; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 5px;">
-                <option value="crack">Crack</option>
-                <option value="leak">Leak</option>
-                <option value="busted">Busted</option>
-                <option value="damaged">Damaged</option>
-                <option value="other">Other</option>
-            </select>
-        </div>
-        <!-- Description Section -->
-        <div style="width: 333px; height: 187px; left: 30px; top: 543px; position: absolute">
-            <div style="width: 333px; height: 162px; left: 0px; top: 25px; position: absolute; background: #D9D9D9; border-radius: 20px"></div>
-            <div style="left: 101px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                Description:
+            
+            <!-- Submit Button -->
+            <div style="width: 205px; height: 47px; left: 94px; top: 773px; position: absolute; background: #D9D9D9; border-radius: 30px; cursor: pointer;" 
+            onclick="handleSubmit()">
             </div>
-            <textarea style="width: 313px; height: 142px; left: 10px; top: 35px; position: absolute; background: transparent; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 10px; resize: none; outline: none; border-radius: 15px;"></textarea>
-        </div>
-        <!-- Submit Button -->
-        <div style="width: 205px; height: 47px; left: 94px; top: 773px; position: absolute; background: #D9D9D9; border-radius: 30px; cursor: pointer;" 
-             onclick="handleSubmit()">
-        </div>
-        <div style="left: 162px; top: 784px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word; cursor: pointer;" 
-             onclick="handleSubmit()">
+            <div style="left: 162px; top: 784px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word; cursor: pointer;" 
+            onclick="handleSubmit()">
             Submit
-        </div>
-        <!-- Popup Div -->
-        <div id="popup" style="display: none; width: 250px; height: 100px; position: fixed; left: 12%; top: 50%; transform: translate(-50%, -50%); background: #c47f7f; border-radius: 20px; text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 18px; color: black; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
-            You have successfully created an alert!
-        </div>
-        <!-- Small Icon in Top Left -->
-        <a href="index.html">
-            <div style="width: 73px; height: 73px; left: 0px; top: 0px; position: absolute;">
-                <img src="media/back_arrow_icon.png" style="width: 100%; height: 100%;">
             </div>
-        </a>
-    </div>
-    <script>
-        function handleSubmit() {
-            const popup = document.getElementById("popup");
-            popup.style.display = "block";
-            setTimeout(() => {
-                popup.style.display = "none";
-                window.location.href = "index.html";
-            }, 1500);
+
+            <!-- Popup Div (Initially Hidden) -->
+            <div id="popup" style="display: none; width: 250px; height: 100px; position: fixed; left: 12%; top: 50%; transform: translate(-50%, -50%); background: #c47f7f; border-radius: 20px; text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 18px; color: black; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+            You have successfully created an alert!
+            </div>
+            
+            <!-- Small Icon in Top Left -->
+            <a href="index.html">
+                <div style="width: 73px; height: 73px; left: 0px; top: 0px; position: absolute; ">
+                    <!-- box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) -->
+                    <!-- <div style="width: 60.83px; height: 60.83px; left: 6.08px; top: 6.08px; position: absolute; border: 1.50px #292D32 solid"></div> -->
+                    <img src="media/back_arrow_icon.png" style="width: 100%; height: 100%;">
+                </div>
+            </a>
+        </div>
+
+
+        <script>
+            function handleSubmit() {
+                // Show the popup
+                const popup = document.getElementById("popup");
+                popup.style.display = "block";
+
+                // add the newly reported crack
+                cord = JSON.parse(localStorage.getItem("newCrack"));
+                markers = JSON.parse(localStorage.getItem("cracks"));
+                markers.push(cord);
+                localStorage.setItem("cracks", JSON.stringify(markers));
+            
+                // Hide the popup and redirect after 4 seconds
+                setTimeout(() => {
+                    popup.style.display = "none";
+                    window.location.href="index.html"; // Replace with your desired HTML file
+                }, 1500);
+            }
+
+
+            function triggerFileInput() {
+    // Trigger the hidden file input
+    document.getElementById("fileInput").click();
+}
+
+function handleFileSelect(event) {
+    const file = event.target.files[0]; // Get the selected file
+    if (file) {
+        // You can handle the selected file here
+        console.log("File selected:", file.name);
+        alert("File uploaded successfully: " + file.name);
+    }
+}
+function handleCameraInput(event) {
+        const file = event.target.files[0];
+        if (file) {
+            alert(`You selected: ${file.name}`);
+            // Further processing can be done here, such as uploading the image or displaying a preview.
         }
-        function handleFileSelect(event) {
-            const file = event.target.files[0];
-            if (file) alert("File uploaded successfully: " + file.name);
-        }
-        function handleCameraInput(event) {
-            const file = event.target.files[0];
-            if (file) alert(`You selected: ${file.name}`);
-        }
-    </script>
-</body>
+    }
+
+            </script>
+
+    </body>
 </html>
