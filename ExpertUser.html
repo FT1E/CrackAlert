@@ -4,20 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrackAlert</title>
     <link rel="icon" href="media/Logo.jpg" type="image/jpeg">
-    <style>
-        .iphone-border {
-            width: 390px;
-            height: 844px;
-            border: 4px solid black; /* Simulate the phone frame */
-            border-radius: 50px; /* Rounded corners like the phone */
-            background-color: white; /* Background for the device */
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add shadow for effect */
-        }
-    </style>
+
 </head>
 <body>
-    <div class="iphone-border">
         <div style="width: 100%; height: 100%; position: relative; background: rgb(255, 255, 255);">
             <!-- Header Section -->
             <div style="width: 393px; height: 73px; left: 0px; top: 0px; position: absolute; background: #5388EA"></div>
@@ -83,7 +72,7 @@
         function handleMap(lat, lng){
             dest = [lat, lng];
             localStorage.setItem("dest", JSON.stringify(dest));
-            window.location.href = "expertMap.html";
+            window.location.href = "ExpertMapAttempt1.html";
         }
     </script>
 </body>

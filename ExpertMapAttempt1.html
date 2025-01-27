@@ -109,7 +109,7 @@
 
         // Add markers and polyline
         const start = [45.5490077290966, 13.727629546356725];
-        const dest = JSON.parse(localStorage.getItem("dest")) || [45.5485, 13.729];
+        const dest = JSON.parse(localStorage.getItem("dest"));
 
         L.marker(start).addTo(map);
         L.marker(dest).addTo(map);
