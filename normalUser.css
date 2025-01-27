@@ -6,9 +6,13 @@
     top: 0;
     left: 0;
     text-align: center;
+    z-index: 2;
+    align-items:center;
 }
 
 .title{
+    word-wrap: break-word;
+    font-weight: 400;
     color: #FFD900;
     font-size: 50px;
     /* to-do add margin top */
