@@ -1,0 +1,15 @@
+.top-bar {
+    width: 100vw;
+    height: 10vh;
+    background: #5388EA;
+    position: sticky;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.title{
+    color: #FFD900;
+    font-size: 50px;
+    /* to-do add margin top */
+}
