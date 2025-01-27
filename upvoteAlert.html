@@ -1,120 +1,276 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upvote Alert</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            font-family: Arial, sans-serif;
+        }
 
-    </head>
+        /* Main container */
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            background: white;
+        }
 
-    <body>
-        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-        <!-- Create Alert -->
-        <!------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
-        <div style="width: 100%; height: 100%; position: relative; background: white">
-            <!-- Top Bar -->
-            <div style="width: 393px; height: 73px; left: 0px; top: 0px; position: absolute; background: #5388EA"></div>
-            
-            <!-- Title -->
-            <div style="left: 86px; top: 11px; position: absolute; color: #FFD900; font-size: 40px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                Upvote Alert
-            </div>
-            
-            <!-- Photo Upload Section -->
-            <div style="width: 255px; height: 232px; left: 64px; top: 82px; position: absolute">
-                <!-- Section Title -->
-                <div style="left: 14px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                    Take or upload a photo:
-                </div>
-                <!-- Background Box -->
-                <div style="width: 255px; height: 194px; left: 0px; top: 38px; position: absolute; background: #D9D9D9; border-radius: 20px"></div>
-                <!-- Take Photo Icon -->
-                <div style="width: 96px; height: 94px; left: 79px; top: 83px; position: absolute">
-                    <!-- <div style="width: 96px; height: 73.86px; left: 0px; top: 10.07px; position: absolute; background: black"></div> -->
-                    <img src="media/camera_icon.png" style="">
-                </div>
-                <!-- "Take a photo" Text -->
-                <div style="left: 78px; top: 58px; position: absolute">
-                    <span style="color: black; font-size: 15px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">Take a photo</span>
-                    <span style="color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">:</span>
-                </div>
-                <!-- "Upload" Text -->
-                <div style="left: 181px; top: 200px; position: absolute; color: black; font-size: 15px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                    Upload
-                </div>
-                <!-- Upload Icon -->
-                <div style="width: 43px; height: 38px; left: 189px; top: 159px; position: absolute">
-                    <!-- <div style="width: 32.25px; height: 28.50px; left: 5.38px; top: 4.75px; position: absolute; border: 4px #1E1E1E solid"></div> -->
-                    <img src="media/upload_icon.png" style="">
-                </div>
-            </div>
-            
-            
-           
-            <!-- Type Section -->
-            <div style="width: 333px; height: 86px; left: 30px; top: 350px; position: absolute">
-             <!-- Background Box -->
-        <div style="width: 333px; height: 61px; left: 0px; top: 25px; position: absolute; background: #D9D9D9"></div>
-         <!-- "Type:" Text -->
-        <div style="left: 135px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                Type:
+        /* Top Bar */
+        .top-bar {
+            width: 100%;
+            height: 10vh;
+            background: #5388EA;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* Title */
+        .title {
+            position: absolute;
+            top: 1.5vh;
+            left: 26%;
+            color: #FFD900;
+            font-size: 6vw;
+            font-family: Kavoon, sans-serif;
+            font-weight: 600;
+        }
+
+        /* Photo Upload Section */
+        .photo-section {
+            width: 65vw;
+            height: 30vh;
+            position: absolute;
+            top: 12vh;
+            left: 17.5vw;
+        }
+
+        .photo-section-title {
+            position: absolute;
+            top: 0;
+            left: 5%;
+            color: black;
+            font-size: 4vw;
+            font-family: Kavoon, sans-serif;
+            font-weight: 400;
+        }
+
+        .photo-box {
+            width: 100%;
+            height: 85%;
+            background: #D9D9D9;
+            border-radius: 20px;
+            position: absolute;
+            top: 5vh;
+        }
+
+        .camera-icon {
+            width: 25%;
+            height: 25%;
+            position: absolute;
+            top: 45%;
+            left: 38%;
+        }
+
+        .upload-text {
+            position: absolute;
+            top: 85%;
+            left: 70%;
+            color: black;
+            font-size: 3vw;
+            font-family: Kavoon, sans-serif;
+            font-weight: 400;
+        }
+
+        .upload-icon {
+            width: 10%;
+            height: 10%;
+            position: absolute;
+            top: 75%;
+            left: 75%;
+        }
+
+        /* Type Section */
+        .type-section {
+            width: 85vw;
+            height: 12vh;
+            position: absolute;
+            top: 46vh;
+            left: 7.5vw;
+        }
+
+        .type-title {
+            position: absolute;
+            top: 0;
+            left: 35%;
+            color: black;
+            font-size: 4vw;
+            font-family: Kavoon, sans-serif;
+            font-weight: 400;
+        }
+
+        .type-dropdown {
+            width: 100%;
+            height: 70%;
+            background: #D9D9D9;
+            font-size: 3vw;
+            font-family: Arial, sans-serif;
+            border: none;
+            border-radius: 10px;
+            padding: 5px;
+            outline: none;
+        }
+
+        /* Description Section */
+        .description-section {
+            width: 85vw;
+            height: 25vh;
+            position: absolute;
+            top: 60vh;
+            left: 7.5vw;
+        }
+
+        .description-title {
+            position: absolute;
+            top: 0;
+            left: 25%;
+            color: black;
+            font-size: 4vw;
+            font-family: Kavoon, sans-serif;
+            font-weight: 400;
+        }
+
+        .description-box {
+            width: 100%;
+            height: 85%;
+            background: #D9D9D9;
+            border-radius: 15px;
+            border: none;
+            padding: 10px;
+            font-size: 3vw;
+            font-family: Arial, sans-serif;
+            resize: none;
+            outline: none;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 60vw;
+            height: 8vh;
+            background: #D9D9D9;
+            border-radius: 20px;
+            position: absolute;
+            top: 90vh;
+            left: 20vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .submit-btn-text {
+            color: black;
+            font-size: 4vw;
+            font-family: Kavoon, sans-serif;
+            font-weight: 400;
+        }
+
+        /* Popup Div */
+        #popup {
+            display: none;
+            width: 70vw;
+            height: 10vh;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #c47f7f;
+            border-radius: 20px;
+            text-align: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 3vw;
+            color: black;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Back Arrow */
+        .back-arrow {
+            width: 10%;
+            height: 10%;
+            position: absolute;
+            top: 1vh;
+            left: 2%;
+        }
+
+        .back-arrow img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar"></div>
+        <div class="title">Upvote Alert</div>
+
+        <!-- Photo Upload Section -->
+        <div class="photo-section">
+            <div class="photo-section-title">Take or upload a photo:</div>
+            <div class="photo-box"></div>
+            <img src="media/camera_icon.png" class="camera-icon" alt="Camera Icon">
+            <img src="media/upload_icon.png" class="upload-icon" alt="Upload Icon">
+            <div class="upload-text">Upload</div>
         </div>
-    <!-- Dropdown Menu -->
-    <select style="width: 333px; height: 61px; left: 0px; top: 25px; position: absolute; background: #D9D9D9; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 5px;">
-        <option value="crack">Crack</option>
-        <option value="leak">Leak</option>
-        <option value="busted">Busted</option>
-        <option value="damaged">Damaged</option>
-        <option value="other">Other</option>
-    </select>
-</div>
-            
-            <!-- Description Section -->
-            <div style="width: 333px; height: 187px; left: 30px; top: 500px; position: absolute">
-                <!-- Background Box -->
-                <div style="width: 333px; height: 162px; left: 0px; top: 25px; position: absolute; background: #D9D9D9; border-radius: 20px"></div>
-                <!-- "Description:" Text -->
-                <div style="left: 101px; top: 0px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word">
-                    Description:
-                </div>
-                <!-- Textarea -->
-                 <textarea style="width: 313px; height: 142px; left: 10px; top: 35px; position: absolute; background: transparent; font-size: 16px; font-family: Arial, sans-serif; border: none; padding: 10px; resize: none; outline: none; border-radius: 15px;"></textarea>
-            </div>
-            
-            <!-- Submit Button -->
-            <div style="width: 205px; height: 47px; left: 94px; top: 773px; position: absolute; background: #D9D9D9; border-radius: 30px; cursor: pointer;" 
-            onclick="handleSubmit()">
-            </div>
-            <div style="left: 162px; top: 784px; position: absolute; color: black; font-size: 20px; font-family: Kavoon; font-weight: 400; word-wrap: break-word; cursor: pointer;" 
-            onclick="handleSubmit()">
-            Submit
-            </div>
 
-            <!-- Popup Div (Initially Hidden) -->
-            <div id="popup" style="display: none; width: 250px; height: 100px; position: fixed; left: 12%; top: 50%; transform: translate(-50%, -50%); background: #c47f7f; border-radius: 20px; text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 18px; color: black; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
-            You have successfully upvoted an alert!
-            </div>
-            
-            <!-- Small Icon in Top Left -->
-            <a href="index.html">
-                <div style="width: 73px; height: 73px; left: 0px; top: 0px; position: absolute; ">
-                    <!-- box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) -->
-                    <!-- <div style="width: 60.83px; height: 60.83px; left: 6.08px; top: 6.08px; position: absolute; border: 1.50px #292D32 solid"></div> -->
-                    <img src="media/back_arrow_icon.png" style="width: 100%; height: 100%;">
-                </div>
-            </a>
+        <!-- Type Section -->
+        <div class="type-section">
+            <div class="type-title">Type:</div>
+            <select class="type-dropdown">
+                <option value="crack">Crack</option>
+                <option value="leak">Leak</option>
+                <option value="busted">Busted</option>
+                <option value="damaged">Damaged</option>
+                <option value="other">Other</option>
+            </select>
         </div>
 
+        <!-- Description Section -->
+        <div class="description-section">
+            <div class="description-title">Description:</div>
+            <textarea class="description-box" placeholder="Describe the issue..."></textarea>
+        </div>
 
-        <script>
-            function handleSubmit() {
-                // Show the popup
-                const popup = document.getElementById("popup");
-                popup.style.display = "block";
-            
-                // Hide the popup and redirect after 4 seconds
-                setTimeout(() => {
-                    popup.style.display = "none";
-                    window.location.href="index.html"; // Replace with your desired HTML file
-                }, 4000);
-            }
-            </script>
+        <!-- Submit Button -->
+        <div class="submit-btn" onclick="handleSubmit()">
+            <span class="submit-btn-text">Submit</span>
+        </div>
 
-    </body>
+        <!-- Popup Div -->
+        <div id="popup">You have successfully upvoted an alert!</div>
+
+        <!-- Back Arrow -->
+        <a href="index.html" class="back-arrow">
+            <img src="media/back_arrow_icon.png" alt="Back Arrow">
+        </a>
+    </div>
+
+    <script>
+        function handleSubmit() {
+            const popup = document.getElementById("popup");
+            popup.style.display = "block";
+
+            setTimeout(() => {
+                popup.style.display = "none";
+                window.location.href = "index.html";
+            }, 4000);
+        }
+    </script>
+</body>
 </html>
