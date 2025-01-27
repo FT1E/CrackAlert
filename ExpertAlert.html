@@ -13,7 +13,7 @@
         <!-- Header -->
         <div style="width: 393px; height: 73px; left: 0px; top: 0px; position: absolute; background: #5388EA"></div>
       
-        <div id="popup" style="display: none; width: 250px; height: 100px; position: fixed; left: 11%; top: 62%; transform: translate(-50%, -50%); background: #c47f7f; border-radius: 20px; text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 18px; color: black; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);">
+        <div id="popup" style="display: none; width: 250px; height: 100px; position: fixed; left: 50%; top: 62%; transform: translate(-50%, -50%); background: #c47f7f; border-radius: 20px; text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 18px; color: black; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); z-index: 2;">
            You have successfully escalated an alert!
            </div>
    
@@ -116,7 +116,7 @@
 </script>
     </div>
 <!-- Description Section -->
-<div style="width: 333px; height: 187px; left: 30px; top: 240px; position: absolute">
+<div style="width: 333px; height: 187px; left: 30px; top: 240px; position: absolute; z-index: 0;">
     <!-- Background Box -->
     <div style="width: 333px; height: 162px; left: 0px; top: 25px; position: absolute; background: #D9D9D9; border-radius: 20px"></div>
     <!-- "Description:" Text -->
@@ -137,7 +137,7 @@
             // Hide the popup and redirect after 4 seconds
             setTimeout(() => {
                 popup.style.display = "none";
-                window.location.href="Mapata na experto"; // Replace with your desired HTML file
+                window.location.href="ExpertMapAttempt1.html"; // Replace with your desired HTML file
             }, 1000);
         }
         </script>
