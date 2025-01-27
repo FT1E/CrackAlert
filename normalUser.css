@@ -17,3 +17,36 @@
     font-size: 50px;
     /* to-do add margin top */
 }
+
+#map {
+    width: 100vw;
+    height: 80vh;
+}
+
+.bottom-bar {
+    width:100vw;
+    height: 10vh;
+    background: #5388EA;
+    position: sticky;
+    top: 90vh;
+    left: 0vw;
+}
+
+.bottom-bar-button{
+    font-size: 40px;
+    color:#FFD900;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 25px; 
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    top: 10%;
+    height: fit-content;
+    left: 10%;
+    width: 80%;
+    position: relative;
+
+}
