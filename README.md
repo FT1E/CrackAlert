@@ -42,5 +42,5 @@ https://crack-alert-expert.vercel.app
 - **[Samoil Gjorgiev]** - coder(front-end), presenter
 - **[Filip Trajkovski]** - coder(front-end + back-end), writer
 - **[Alja Eremic]** - testing, idea creator
-- **[Dimitri Petrovic]** - testing, presentation maker 
+- **[Dimitrije Petrovic]** - testing, presentation maker 
 
